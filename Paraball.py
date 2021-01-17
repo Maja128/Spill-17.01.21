@@ -330,8 +330,7 @@ def runde():
     else:
         plate_b = random.randint(50,100)
     global plate_x
-    plate_x = 350
-    # plate_x = random.randrange(350,vindusbredde-plate_b)
+    plate_x = random.randrange(350,vindusbredde-plate_b)
     global plate_y
     plate_y = 470
 
