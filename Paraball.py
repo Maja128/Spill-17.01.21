@@ -72,88 +72,88 @@ def knapp(msg,x,y,b,h,ic,ac,handling=None):
                 if msg == "1":
                     fart_opp = -6.00
                 if msg == "2":
-                    fart_opp = -6.37
+                    fart_opp = -6.21
                 if msg == "3":
-                    fart_opp = -6.74
+                    fart_opp = -6.42
                 if msg == "4":
-                    fart_opp = -7.11
+                    fart_opp = -6.63
                 if msg == "5":
-                    fart_opp = -7.47
+                    fart_opp = -6.84
                 if msg == "6":
-                    fart_opp = -7.84
+                    fart_opp = -7.05
                 if msg == "7":
-                    fart_opp = -8.21
+                    fart_opp = -7.26
                 if msg == "8":
-                    fart_opp = -8.58
+                    fart_opp = -7.47
                 if msg == "9":
-                    fart_opp = -8.95
+                    fart_opp = -7.68
                 if msg == "10":
-                    fart_opp = -9.32
+                    fart_opp = -7.89
                 if msg == "11":
-                    fart_opp = -9.68
+                    fart_opp = -8.11
                 if msg == "12":
-                    fart_opp = -10.05
+                    fart_opp = -8.32
                 if msg == "13":
-                    fart_opp = -10.42
+                    fart_opp = -8.53
                 if msg == "14":
-                    fart_opp = -10.79
+                    fart_opp = -8.74
                 if msg == "15":
-                    fart_opp = -11.16
+                    fart_opp = -8.95
                 if msg == "16":
-                    fart_opp = -11.53
+                    fart_opp = -9.16
                 if msg == "17":
-                    fart_opp = -11.89
+                    fart_opp = -9.37
                 if msg == "18":
-                    fart_opp = -12.26
+                    fart_opp = -9.58
                 if msg == "19":
-                    fart_opp = -12.63
+                    fart_opp = -9.79
                 if msg == "20":
-                    fart_opp = -13.00
+                    fart_opp = -10.00
 
                 return fart_opp
 
             if handling == "fart bort":
                 global fart_bort
                 if msg == "1":
-                    fart_bort = 7.96
-                if msg == "2":
-                    fart_bort = 8.86
-                if msg == "3":
-                    fart_bort = 9.75
-                if msg == "4":
-                    fart_bort = 10.65
-                if msg == "5":
                     fart_bort = 11.55
+                if msg == "2":
+                    fart_bort = 11.89
+                if msg == "3":
+                    fart_bort = 12.23
+                if msg == "4":
+                    fart_bort = 12.57
+                if msg == "5":
+                    fart_bort = 12.91
                 if msg == "6":
-                    fart_bort = 12.44
+                    fart_bort = 13.25
                 if msg == "7":
-                    fart_bort = 13.34
+                    fart_bort = 13.59
                 if msg == "8":
-                    fart_bort = 14.24
+                    fart_bort = 13.93
                 if msg == "9":
-                    fart_bort = 15.13
+                    fart_bort = 14.27
                 if msg == "10":
-                    fart_bort = 16.03
+                    fart_bort = 14.61
                 if msg == "11":
-                    fart_bort = 16.93
+                    fart_bort = 14.94
                 if msg == "12":
-                    fart_bort = 17.93
+                    fart_bort = 15.28
                 if msg == "13":
-                    fart_bort = 18.72
+                    fart_bort = 15.62
                 if msg == "14":
-                    fart_bort = 19.62
+                    fart_bort = 15.96
                 if msg == "15":
-                    fart_bort = 20.52
+                    fart_bort = 16.30
                 if msg == "16":
-                    fart_bort = 21.41
+                    fart_bort = 16.64
                 if msg == "17":
-                    fart_bort = 22.31
+                    fart_bort = 16.98
                 if msg == "18":
-                    fart_bort = 23.21
+                    fart_bort = 17.32
                 if msg == "19":
-                    fart_bort = 24.10
+                    fart_bort = 17.66
                 if msg == "20":
-                    fart_bort = 25.00
+                    fart_bort = 18.00
 
                 return fart_bort
 
@@ -295,9 +295,9 @@ def kast():
         score(poeng)
         tid += 1
 
-        if y + int(fart_opp * tid/10 + 1/2 * 7 * (tid/10)**2) < plate_y:
-            y += int(fart_opp * tid/10 + 1/2 * 7 * (tid/10)**2)    # s = v0 * t + 1/2 * a * t**2 med noen justeringer
-            x += int(0.2 * fart_bort * tid/10)
+        if y + int(fart_opp * tid/25 + 1/2 * 7 * (tid/25)**2) < plate_y - ball_diameter:
+            y += int(fart_opp * tid/25 + 1/2 * 7 * (tid/25)**2)    # s = v0 * t + 1/2 * a * t**2 med noen justeringer
+            x += int(0.2 * fart_bort * tid/25)
         else:
             kast_ferdig = True
 
@@ -330,7 +330,8 @@ def runde():
     else:
         plate_b = random.randint(50,100)
     global plate_x
-    plate_x = random.randrange(350,vindusbredde-plate_b)
+    plate_x = 350
+    # plate_x = random.randrange(350,vindusbredde-plate_b)
     global plate_y
     plate_y = 470
 
